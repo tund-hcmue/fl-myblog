@@ -1,1 +1,21 @@
-2021-02-01 22:22:54,612 INFO: Myblog startup [in /media/tund/HDD/myblog/app/__init__.py:43]
+2021-02-02 22:30:45,331 ERROR: Exception on /reset_password_request [POST] [in /home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/tund/anaconda3/envs/flmyblog/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/media/tund/HDD/myblog/app/routes.py", line 172, in reset_password_request
+    send_password_reset_email(user)
+  File "/media/tund/HDD/myblog/app/email.py", line 13, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/media/tund/HDD/myblog/app/models.py", line 62, in get_reset_password_token
+    return jwt.encode(
+NameError: name 'jwt' is not defined
